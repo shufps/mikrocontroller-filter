@@ -1,0 +1,26 @@
+{
+    "manifest_version": 3,
+    "name": "Mikrocontroller Blocklist",
+    "version": "1.0",
+    "permissions": [
+      "storage",
+      "activeTab",
+      "scripting"
+    ],
+    "host_permissions": [
+      "*://www.mikrocontroller.net/*"
+    ],
+    "action": {
+      "default_popup": "options.html"
+    },
+    "background": {
+      "service_worker": "background.js"
+    },
+    "content_scripts": [
+      {
+        "matches": ["*://www.mikrocontroller.net/*"],
+        "js": ["content.js"]
+      }
+    ],
+    "options_page": "options.html"
+  }
